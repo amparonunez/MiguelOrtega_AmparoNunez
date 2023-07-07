@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'suscripcion.css' %}">
+{% endblock %}
+
+{% block content %}
+      <section>
+        <div class="container-sub">
+            <div class="conten-sub">
+                <h2>
+                    Suscribete a nuestra Fundacion
+                </h2>
+                <p>Suscribete Para ayudar a las areas verdes de la comunidad y<br> obten descuentos exclusivos para ti </p>
+                <form action="#">
+                    <input type="email" class="campo" placeholder="Introduce tu correo electronico">
+                    <input type="submit" value="Suscribir" class="btn-sub" onclick="opensub()">
+                </form>
+
+                <div class=" emergente" id="emergente"> 
+                    <h2>Muchas gracias </h2>
+                    <p>Obten 10% descuento en todas tus compras <br>
+                     30% en descuento cursos de jardineria</p>
+                    <a href="index.html" onclick="closesub()">ok</a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        let emergente = document.getElementById("emergente");
+        function opensub() {
+            emergente.classList.add("open-emergente");
+    
+        }
+        
+       </script>
+{% endblock %}
+
+    
+
+</body> 
+</html>

@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'login.css' %}">
+{% endblock %}
+
+{% block content %}
+<br><br>
+<article id="principal">
+        
+      
+        <form action="" method="post" id="formulario">
+          <h2 class="text-white">Iniciar Sesión</h2>
+          {% csrf_token %}
+          {{form}}
+          <button><input class="a text-uppercase" type="submit" value="Ingresar"></button>
+          <button><a class="a" href="{% url 'registro' %}">Registrarse</a></button>
+        </form>
+</article>
+<br><br>
+
+{% endblock %}

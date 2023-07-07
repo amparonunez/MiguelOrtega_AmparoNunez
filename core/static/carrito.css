@@ -1,0 +1,182 @@
+
+*{
+  padding: 0;
+  margin: 0;
+}
+header{
+  display: flex;
+  flex-direction: column;
+
+}
+
+#arriba{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 100px;
+  height: 100px;
+  align-items: center;
+  background-color: #0A4D68;
+  transition-duration: 3s;
+}
+
+nav{
+  display: flex;
+  justify-content: space-evenly;
+  height: 60px;
+  align-items: center;
+  background-color: #088395;
+}
+
+nav> a{
+  color: aliceblue;
+  text-decoration: none;
+}
+
+
+body{
+  background-color:  #0A4D68;
+}  
+
+
+
+#tabla-carrito{
+  padding: 20px;
+  
+  min-height: 65vh;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;  
+  background-color: #fff;
+
+  
+  
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ffff;
+}
+
+tfoot td {
+  font-weight: bold;
+  color: #fff;
+}
+
+tfoot td:last-child {
+  color: #d00;
+}
+
+
+
+.link{
+  
+  display: flex;
+  justify-content: end;
+  font-size: 1.5rem;
+}
+
+p{
+  color: aliceblue;
+}
+h1{
+  color: aliceblue;
+}
+
+.boton-container {
+  display: flex; 
+}
+
+.comprar-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 4px; /* Agrega un margen a la derecha del botón */
+  border-radius: 4px;
+}
+
+.cancelar-btn {
+  background-color: #f44336; /* Cambia el color de fondo del botón */
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.footer {
+  width: 100%;
+  height: 205px;
+  background-color: #088395;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  
+}
+
+.footer-heading{
+  display: flex;
+  flex-direction: column;
+  margin-right: 4rem ;
+}
+
+.footer-heading h2 {
+  margin-bottom: 2rem;
+}
+
+.footer-heading a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.5 rem;
+}
+
+.footer-heading a:hover{
+  color: red;
+  transition: 0.3s ease-out;
+}
+
+
+.error{
+  background-color: #ffbebe;
+}
+
+#msj{
+  color: #e27c78;
+}
+
+
+
+@media screen and (max-width: 820px) {
+  .footer {
+      padding-top: 2rem;
+  }
+
+}
+
+@media screen and (max-width: 720px) {
+  .footer-3 {
+      display: nonce;
+  }
+  .footer-email-form{
+      margin-top: 2rem;
+  } 
+
+} 
+
+

@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'suscripcion.css' %}">
+{% endblock %}
+
+{% block content %}
+      <h1>Suscribete a la fundacion</h1>
+      <section>
+        {% if user.is_authenticated %}
+            {% if suscrito %}
+                <h3>Felicidades, estas suscrito.</h3>
+                <small>Disfruta de los beneficios!. </small>
+            {% else %}
+                <h3>Beneficios de suscribirte</h3>
+                <p>Si te suscribes con nosotros obtendras descuentos, y podras disfrutar envio gratis el mismo dia de tu compra </p>
+                <br>
+                <form action="{% url 'suscribir' %}" method="post">
+                        {% csrf_token %}
+                        <button>Suscribete</button> 
+                </form>
+                    {% endif %}    
+                    {% else %}
+                        sdsd                
+            {% endif %}
+      </section>
+{% endblock %}
+
+    

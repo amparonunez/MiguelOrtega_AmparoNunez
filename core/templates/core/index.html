@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+  <div id="carruceles">
+    <div class="carrucel">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="{% static 'img/carrucel1/LAS MEJORES OFERTAS PARA PERFECCIONAR TU JARDIN.JPEG.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="{% static 'img/carrucel1/ENCUENTRA TODO LO QUE BUSCAS EN UN.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/carrucel1/DESCUENTOS.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="carrucel">
+      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="2000">
+            <img src="{% static 'img/1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="{% static 'img/2.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{%  static 'img/3.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+  
+  <section class="cuidando-jardin">
+    <div class="contenido">
+      <img src="{% static 'img/jardineria mas info.jpg' %}" alt="imagen">
+      <h2>Cuidando el jardín</h2>
+      <p>Jardinear es mucho más que regar las plantas: es un momento de relajo, paz, concentración y conexión con la naturaleza, sus procesos y sabiduría. Una labor que requiere de herramientas, como palas, tijeras, rastrillos y regadores, para ayudarnos en la tarea de cuidar y darle a cada planta lo que necesita.</p>
+      <a href="#" class="btn">Más información</a>
+    </div>
+  </section>
+
+  {% endblock %}
+  
+  

@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'crudProductos.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="inicial"> 
+            <div class="box">
+                <font size=9>Lista de productos registrados</font>
+            </div>
+            </section>
+            
+
+        <section id="inicial">
+            <div id="tabla">
+                <table  id="table" class="table table-bordered border-primary">
+                    <thead>
+                    <tr>
+                        <th scope="col">Codigo de barras</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio entrada</th> 
+                        <th scope="col">Oferta</th>
+                        <th scope="col">Stock</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col" class="espaciado">Operaciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for producto in productos %}
+                    <tr>                 
+                        <td> {{producto.codigo}}  </td>
+                        <td> {{producto.detalle}} </td>
+                        <td> {{producto.precio}}  </td>
+                        <td> {{producto.oferta}}  </td>
+                        <td>  {{producto.stock}} </td>
+                        <td>  <img src="{{producto.imagen}}" height="50px" width="50px"></td>
+                        <td>
+                        <div id="botones">
+                            <a href="{% url 'modificar' producto.codigo %}"><img src="{% static 'img/update.png' %}" alt=""></a>
+                            <a href="{% url 'eliminar' producto.codigo %}"><img src="{% static 'img/delete.png' %}" alt=""></a>
+                            </div>
+                        </td>
+                    </tr>
+                
+                    </tbody>
+                    {% endfor %}
+                </table>
+                <a class="btn btn-primary" href="{% url 'agregar' %}" style="margin: 10px; background-color: #2ba8fb;" >Agregar producto</a>
+            </div>
+    </section>
+    
+{% endblock %}

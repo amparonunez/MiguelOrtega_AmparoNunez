@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'login.css' %}">
+{% endblock %}
+
+{% block content %}
+<body>
+<article id="principal">
+      <section id="formulario">
+        <label for="rut">Rut</label>
+        <input type="text" name="rut" id="rut" class="error" onkeyup="validarRut()">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" name="contrasena" id="contrasena" class="error" onkeyup="validarContrasena()">
+        <button onclick="iniciarSesion()">Iniciar Sesión</button>
+        <button><a class="a" href="{% url 'registro' %}">Registrarse</a></button>
+    </section>
+</article>
+</body> 
+</html>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'articulos.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="articulos">
+    {% for planta in plantas %}
+    <div class="articulo">
+        <img src="{{planta.imagen}}" alt="" width="300px" ;>
+        <div>
+            <div class="info">
+                <div class="nombre">
+                    <h1>"{{planta.detalle}} "</h1>
+                </div>
+                <div class="descripcion">
+                    <p>${{planta.precio}}</p>
+                    <p>Stock: {{planta.stock}}</p>
+                    <img src="{% static 'img/icons8_Add_Shopping_Cart_40px_1.png' %}" alt="">
+                </div>
+            </div>
+            <div class="agregar">
+                <a class="btn" href="{% url 'agregar_al_carro' planta.codigo %}"> Comprar </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+{% endblock %}

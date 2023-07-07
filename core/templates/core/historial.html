@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'historial.css' %}">
+{% endblock %}
+ 
+{% block content %}
+      <div id="tabla-hisorial">
+        <h2 class="mt-5">Historial de compras</h2>
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+
+          </div>
+        </div>
+      </button></a>
+
+
+        <table class="historial">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for detalle in detalles %}
+            <tr>
+              <td>{{ detalle.venta.id }}</td>
+              <td>{{ detalle.producto.detalle|slice:":12" }}</td>
+              <td>{{ detalle.stock }}</td>
+              <td>${{ detalle.precio }}</td>
+              <td>{{ detalle.venta.fecha }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      </div>
+      
+{% endblock %}

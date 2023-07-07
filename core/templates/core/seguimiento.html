@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href= "{% static 'seguimiento.css' %}">
+{% endblock %}
+
+{% block content %}   
+    <div id="cuerpo">
+      <p>Ingrese codigo: </p>
+      <input type="text">
+      <img src="{% static 'img/seguimiento.png' %}" alt="">
+    </div>
+    
+
+{% endblock %}

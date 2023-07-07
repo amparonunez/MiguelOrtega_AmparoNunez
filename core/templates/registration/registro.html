@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %} 
+<link rel="stylesheet" href="{% static 'login.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<article id="principal" class="mt-5 mb-5">
+        
+      
+  <form action="{% url 'registro' %}" method="post" id="formulario">
+    <h2 class="text-white">Registra tus datos</h2>
+    {% csrf_token %}
+    {{form}}
+    <button><input class="a text-uppercase" type="submit" value="Crear Cuenta"></button>
+    <button><a class="a" href="{% url 'login' %}">¿Ya tienes una cuenta? Inicia Sesión</a></button>
+  </form>
+</article>
+
+{% endblock %}
+

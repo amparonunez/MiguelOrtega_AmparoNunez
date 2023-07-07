@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garden & MA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+  {% block head %}
+
+  {% endblock %}
+</head>
+
+
+<body>
+  <header>
+    <div id="arriba">
+      <img src="{% static 'img/icons8_sprout_80px.png' %}" alt="">
+      <h1> Garden & MA </h1>
+      {% block header%}
+
+      {% endblock %}
+      {% if user.is_authenticated %}
+      <a href="{% url 'logout' %}"><button>
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <span>Cerrar Sesión</span>
+      </button></a>
+      {% else %}
+      <a href="{% url 'login' %}"><button>
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+        <span>Iniciar Sesion</span>
+      </button></a>
+      {% endif %}
+
+
+
+    </div>
+    <nav>
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'articulos' %}">Articulos</a>
+      <a href="{% url 'carrito' %}">Carrito</a>
+      {% if user.is_authenticated %}
+      <a href="{% url 'historial' %}">Historial</a>
+      {% endif %}
+      <a href="{% url 'seguimiento' %}">Seguimiento</a>
+      {% if user.is_staff %}
+      <a href="{% url 'crudProductos' %}">CRUD Productos</a>
+      {% endif %}
+      <a href="{% url 'suscripcion' %}">Suscripcion</a>
+
+    </nav>
+
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+  <div class="footer">
+    <div class="footer-heading footer-1">
+      <h2>Mas sobre nosotros</h2>
+      <a href="#">Manual del buen jardinero</a>
+      <a href="#">Cursos de Jardineria</a>
+      <a href="#">Asociados</a>
+      <a href="#">Servicio comunitario</a>
+      <a href="#">Soporte</a>
+    </div>
+    <div class="footer-heading footer-2">
+      <h2>Contactanos</h2>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Youtube</a>
+      <a href="#">Twitte</a>
+    </div>
+    <div class="footer-heading footer-3">
+      <h2>Fundacion </h2>
+
+
+    </div>
+
+  </div>
+
+
+</body>
+
+
+</html>
